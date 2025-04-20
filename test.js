@@ -6,6 +6,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const vikeReactDir = path.join(__dirname, "packages/vike-react/");
 
 try {
+  logSep()
   console.log("createRequire(import.meta.url)", {
     paths: vikeReactDir,
   });
@@ -20,6 +21,7 @@ try {
 }
 
 try {
+  logSep()
   console.log("createRequire(__dirname)", {
     paths: vikeReactDir,
   });
@@ -34,6 +36,7 @@ try {
 }
 
 try {
+  logSep()
   console.log("createRequire(vikeReactDir)", {
     paths: __dirname,
   });
@@ -48,11 +51,20 @@ try {
 }
 
 try {
-  console.log("createRequire(vikeReactDir)");
+  logSep()
+  console.log(`createRequire(vikeReactDir)`);
   const require_ = createRequire(vikeReactDir);
   const resolved = require_.resolve("vike-react/feature");
 
   console.log(resolved);
 } catch (error) {
   console.log(error);
+}
+
+logSep()
+
+function logSep() {
+  console.log()
+  console.log('=====')
+  console.log()
 }
