@@ -46,3 +46,13 @@ try {
 } catch (error) {
   console.log(error);
 }
+
+try {
+  console.log("createRequire(vikeReactDir)");
+  const require_ = createRequire(vikeReactDir);
+  const resolved = require_.resolve("vike-react/feature");
+
+  console.log(resolved);
+} catch (error) {
+  console.log(error);
+}
